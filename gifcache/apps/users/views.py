@@ -8,10 +8,10 @@ from ..home.forms import LoginForm
 from django.utils import timezone
 from .models import Gif, Profile
 from operator import itemgetter
-from cStringIO import StringIO
+#from cStringIO import StringIO
 from .forms import AddGifForm
 from taggit.models import Tag
-from PIL import Image
+#from PIL import Image
 import requests
 import logging
 import random

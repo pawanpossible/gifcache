@@ -36,7 +36,7 @@ def get_nav_gifs():
 
 
 def error403(request):
-    home_gif = random.choice(xrange(get_home_gifs()))
+    home_gif = random.choice(range(get_home_gifs()))
     context = {
         'title': 'Error',
         'home_gif': home_gif
@@ -45,7 +45,7 @@ def error403(request):
 
 
 def error404(request):
-    home_gif = random.choice(xrange(get_home_gifs()))
+    home_gif = random.choice(range(get_home_gifs()))
     context = {
         'title': 'Error',
         'home_gif': home_gif
@@ -54,7 +54,7 @@ def error404(request):
 
 
 def error500(request):
-    home_gif = random.choice(xrange(get_home_gifs()))
+    home_gif = random.choice(range(get_home_gifs()))
     context = {
         'title': 'Error',
         'home_gif': home_gif
@@ -67,7 +67,7 @@ def index(request):
     if request.user.is_authenticated():
         logged_in = True
 
-    home_gif = random.choice(xrange(get_home_gifs()))
+    home_gif = random.choice(range(get_home_gifs()))
     context = {
         'title': 'Home',
         'logged_in': logged_in,
@@ -81,7 +81,7 @@ def login_view(request):
     logged_in = False
     if request.user.is_authenticated():
         logged_in = True
-    navgif = random.choice(xrange(get_nav_gifs()))
+    navgif = random.choice(range(get_nav_gifs()))
 
     context = {
         'title': 'Login',
@@ -98,7 +98,7 @@ def logout_view(request):
     context = {
         'title': 'Home',
         'message': 'You have been succesfully logged out!',
-        'home_gif': random.choice(xrange(get_home_gifs()))
+        'home_gif': random.choice(range(get_home_gifs()))
     }
     response = render(request, 'home/home.html', context)
     response.delete_cookie('logged_in')
@@ -112,7 +112,7 @@ def authenticate_user(request):
     username = request.POST['username']
     password = request.POST['password']
     user = authenticate(username=username, password=password)
-    navgif = random.choice(xrange(get_nav_gifs()))
+    navgif = random.choice(range(get_nav_gifs()))
     if user is not None:
         if user.is_active:
             u = get_object_or_404(User, username=username)
