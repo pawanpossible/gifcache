@@ -2,7 +2,6 @@
 db.sqlite3
 credentials.py
 *.jpg
-settings.py
 packery-mode.pkgd.min.js
 /static_prod/
 gifcache/static/js/jPages.min.js
